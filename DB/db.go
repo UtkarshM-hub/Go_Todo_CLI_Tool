@@ -11,6 +11,7 @@ type Task struct{
 	Task string
 	Status bool
 	Priority int64
+	Description string
 }
 
 type TODO []Task
@@ -56,11 +57,12 @@ func UpdateDb(task []Task){
 	os.WriteFile("DB/db.json",input,0644)
 }
 
-func AddTask(task string,status bool,priority int64){
+func AddTask(task string,status bool,priority int64,Description string){
 	var newTask Task
 	newTask.Task=task
 	newTask.Priority=priority
 	newTask.Status=status
+	newTask.Description=Description
 	tasks,err:=getTasks()
 	fmt.Println(tasks)
 	if err!=nil{

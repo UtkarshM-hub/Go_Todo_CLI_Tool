@@ -10,6 +10,7 @@ import (
 
 var taskName string
 var priority int64
+var description string=""
 
 // addCmd represents the add command
 var addCmd = &cobra.Command{
@@ -22,7 +23,7 @@ var addCmd = &cobra.Command{
 		// 	Priority: priority,
 		// 	Status: false,
 		// }
-		database.AddTask(taskName,false,priority)
+		database.AddTask(taskName,false,priority,description)
 	},
 }
 
@@ -30,6 +31,7 @@ func init() {
 	rootCmd.AddCommand(addCmd)
 	addCmd.Flags().StringVarP(&taskName,"name","n","","used to add name")
 	addCmd.Flags().Int64VarP(&priority,"priority","p",0,"used to set priority")
+	addCmd.Flags().StringVarP(&description,"description","d","","used to set description")
 
 	rootCmd.MarkFlagRequired("name")
 	rootCmd.MarkFlagRequired("priority")
