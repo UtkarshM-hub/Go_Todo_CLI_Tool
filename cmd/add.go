@@ -4,6 +4,8 @@ Copyright © 2022 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	"fmt"
+
 	database "github.com/UtkarshM-hub/todo/DB"
 	"github.com/spf13/cobra"
 )
@@ -18,12 +20,8 @@ var addCmd = &cobra.Command{
 	Short: "Add task to TODO",
 	Long: `Add task to TODO`,
 	Run: func(cmd *cobra.Command, args []string) {
-		// newTask:=database.Task{
-		// 	Task: taskName,
-		// 	Priority: priority,
-		// 	Status: false,
-		// }
 		database.AddTask(taskName,false,priority,description)
+		fmt.Println(" ✅ Task Added Successfully")
 	},
 }
 

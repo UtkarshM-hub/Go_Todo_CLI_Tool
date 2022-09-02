@@ -64,7 +64,6 @@ func AddTask(task string,status bool,priority int64,Description string){
 	newTask.Status=status
 	newTask.Description=Description
 	tasks,err:=getTasks()
-	fmt.Println(tasks)
 	if err!=nil{
 		log.Fatal("Error accessing data")
 	}
