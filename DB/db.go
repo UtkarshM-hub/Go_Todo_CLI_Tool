@@ -15,6 +15,28 @@ type Task struct{
 
 type TODO []Task
 
+func ListAll(){
+	byte,err:=os.ReadFile("DB/db.json")
+	if err!=nil{
+		log.Fatal("Cannot read data")
+	}
+	var tasks []Task
+	json.Unmarshal(byte,&tasks)
+	for i := 0; i < len(tasks); i++ {
+		var prio string
+		if tasks[i].Priority<5{
+			prio="low"
+		} else if tasks[i].Priority>5 {
+			prio="high"
+		} else{
+			prio="medium"
+		}
+		fmt.Println(i+1,"> Task:",tasks[i].Task)
+		fmt.Println("\tPriority:",prio)
+		fmt.Println("\tStatus:",tasks[i].Status)
+	}
+}
+
 func getTasks() ([]Task,error){
 	byte,err:=os.ReadFile("DB/db.json")
 	var data []Task
