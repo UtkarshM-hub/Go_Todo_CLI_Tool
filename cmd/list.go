@@ -8,6 +8,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
+
+
 // listCmd represents the list command
 var listCmd = &cobra.Command{
 	Use:   "list",
@@ -21,6 +23,7 @@ var listCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(listCmd)
 
+	
 	// Here you will define your flags and configuration settings.
 
 	// Cobra supports Persistent Flags which will work for this command

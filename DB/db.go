@@ -69,3 +69,15 @@ func AddTask(task string,status bool,priority int64){
 	tasks = append(tasks, newTask)
 	UpdateDb(tasks)
 }
+
+func Delete(index int64){
+	tasks,err:=getTasks()
+	if err!=nil{
+		log.Fatal("Unable to access data")
+	}
+	if index<0 || index>int64(len(tasks)){
+		log.Fatal("Index out of range")
+	}
+	tasks = append(tasks[0:index-1],tasks[index:]... )
+	UpdateDb(tasks)
+}
