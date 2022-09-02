@@ -82,3 +82,26 @@ func Delete(index int64){
 	tasks = append(tasks[0:index-1],tasks[index:]... )
 	UpdateDb(tasks)
 }
+
+func Expand(index int64){
+	tasks,err:=getTasks()
+	if err!=nil{
+		log.Fatal("Unable to access data")
+	}
+	if index<0 || index>int64(len(tasks)){
+		log.Fatal("Index out of range")
+	}
+	var prio string
+		if tasks[index-1].Priority<5{
+			prio="low"
+		} else if tasks[index-1].Priority>5 {
+			prio="High"
+		} else{
+			prio="Medium"
+		}
+	task:=tasks[index-1]
+	fmt.Println("Title:",task.Task)
+	fmt.Println("Priority:",prio)
+	fmt.Println("Status:",task.Status)
+	fmt.Println("Description:",task.Description)
+}
