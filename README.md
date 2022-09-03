@@ -36,7 +36,8 @@ todo del -i 1
 ```
 todo list
 ```
-currently it will show in list format. In the upcomming upgrade the tabular form would be included.
+![Screenshot (95)](https://user-images.githubusercontent.com/70505181/188274147-10806dd7-909a-4f29-82c1-81e392e6ae27.png)
+
 
 ## Expand a Task
 ```
@@ -44,7 +45,8 @@ todo exp -i 2
 ```
 The ```-i``` is used to specify index 
 it shows following output
-![Screenshot (92)](https://user-images.githubusercontent.com/70505181/188201408-b125949b-7953-44ca-b83e-6a2d17818a87.png)
+![Screenshot (97)](https://user-images.githubusercontent.com/70505181/188274248-574ad738-2b9c-4179-bf82-9e1d0f70e928.png)
+
 
 ## Mark Task as Complete
 ```
