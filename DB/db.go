@@ -38,7 +38,7 @@ func ListAll(){
 	}
 }
 
-func getTasks() ([]Task,error){
+func GetTasks() ([]Task,error){
 	byte,err:=os.ReadFile("DB/db.json")
 	var data []Task
 	if err!=nil{
@@ -63,7 +63,7 @@ func AddTask(task string,status bool,priority int64,Description string){
 	newTask.Priority=priority
 	newTask.Status=status
 	newTask.Description=Description
-	tasks,err:=getTasks()
+	tasks,err:=GetTasks()
 	if err!=nil{
 		log.Fatal("Error accessing data")
 	}
@@ -72,7 +72,7 @@ func AddTask(task string,status bool,priority int64,Description string){
 }
 
 func Delete(index int64){
-	tasks,err:=getTasks()
+	tasks,err:=GetTasks()
 	if err!=nil{
 		log.Fatal("Unable to access data")
 	}
@@ -84,7 +84,7 @@ func Delete(index int64){
 }
 
 func Expand(index int64){
-	tasks,err:=getTasks()
+	tasks,err:=GetTasks()
 	if err!=nil{
 		log.Fatal("Unable to access data")
 	}
@@ -107,7 +107,7 @@ func Expand(index int64){
 }
 
 func MarkAsComplete(index int64){
-	tasks,err:=getTasks()
+	tasks,err:=GetTasks()
 	if err!=nil{
 		log.Fatal("Unable to access data")
 	}
