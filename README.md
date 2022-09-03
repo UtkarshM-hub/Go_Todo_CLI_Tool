@@ -20,8 +20,6 @@ An example of Add command
 ```
 todo add -n "First task" -p 10 -d "Just an example"
 ```
-
-
 this will store the json data into the db.json file like you can see in the following image
 ![Screenshot (93)](https://user-images.githubusercontent.com/70505181/188202962-48da8742-700d-4f41-a180-2b082d5c47b2.png)
 
@@ -45,6 +43,7 @@ todo exp -i 2
 ```
 The ```-i``` is used to specify index 
 it shows following output
+<br/>
 ![Screenshot (97)](https://user-images.githubusercontent.com/70505181/188274248-574ad738-2b9c-4179-bf82-9e1d0f70e928.png)
 
 
