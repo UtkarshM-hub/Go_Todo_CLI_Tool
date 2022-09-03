@@ -108,6 +108,7 @@ func Expand(index int64){
 
 func MarkAsComplete(index int64){
 	tasks,err:=GetTasks()
+
 	if err!=nil{
 		log.Fatal("Unable to access data")
 	}
