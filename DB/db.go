@@ -117,3 +117,8 @@ func MarkAsComplete(index int64){
 	tasks[index-1].Status=true
 	UpdateDb(tasks)
 }
+
+func ClearList(){
+	var input []Task
+	UpdateDb(input)
+}
