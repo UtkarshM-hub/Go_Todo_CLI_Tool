@@ -105,3 +105,20 @@ func Expand(index int64){
 	fmt.Println("Status:",task.Status)
 	fmt.Println("Description:",task.Description)
 }
+
+func MarkAsComplete(index int64){
+	tasks,err:=getTasks()
+	if err!=nil{
+		log.Fatal("Unable to access data")
+	}
+	if index<0 || index>int64(len(tasks)){
+		log.Fatal("Index out of range")
+	}
+	tasks[index-1].Status=true
+	UpdateDb(tasks)
+}
+
+func ClearList(){
+	var input []Task
+	UpdateDb(input)
+}
